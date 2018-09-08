@@ -18,7 +18,6 @@ class SQLObject
   end
 
   def self.finalize!
-    # debugger
     cols = self.columns
     cols.each do |name|
       define_method(name) do
@@ -54,9 +53,14 @@ class SQLObject
     # ...
   end
 
+#how do you call upon the class?
   def initialize(params = {})
-    raise 
-    # ...
+      # debugger
+      # unless self.columns.include?(attr_name.to_sym)
+      #   raise "unknown attribute '#{attr_name}'"
+      # end
+    # end
+    # raise "unknown attribute '#{params.keys}'"
   end
 
   def attributes
